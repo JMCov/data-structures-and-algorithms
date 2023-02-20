@@ -35,5 +35,8 @@ Includes - Determine whether the value is in the Linked List
 
 Collaborated with:
 
-Addrienne Frey
+Adrienne Frey
 Joe Davitt
+Jeremy Cleland
+
+![Linked List](../assets/Code-Challenge-6.PNG)
