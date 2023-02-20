@@ -50,4 +50,41 @@ describe('Linked List', () => {
     expect(list.includes('peach')).toBeFalsy();
   });
 
+  it('should add a node/nodes to the end of the list', () => {
+    const list = new LinkedList();
+    list.insert('apple');
+    list.append('orange');
+    list.append('kiwi');
+    list.append('mango');
+
+    expect(list.tail.value).toEqual('mango');
+
+    const linkedString = list.toString();
+    expect(linkedString).toEqual('{ apple } -> { orange } -> { kiwi } -> { mango } -> NULL');
+  });
+
+  it('should insert a node before a node in the middle of the list', () => {
+    const list = new LinkedList();
+    list.append('apple');
+    list.append('orange');
+    list.append('kiwi');
+    list.append('mango');
+    list.insertBefore('orange', 'pineapple');
+
+    const linkedString = list.toString();
+    expect(linkedString).toEqual('{ apple } -> { pineapple } -> { orange } -> { kiwi } -> { mango } -> NULL');
+  });
+
+  it('should insert a node after a node in the middle of the list', () => {
+    const list = new LinkedList();
+    list.append('apple');
+    list.append('orange');
+    list.append('kiwi');
+    list.append('mango');
+    list.insertAfter('orange', 'pineapple');
+
+    const linkedString = list.toString();
+    expect(linkedString).toEqual('{ apple } -> { orange } -> { pineapple } -> { kiwi } -> { mango } -> NULL');
+  });
+
 });
