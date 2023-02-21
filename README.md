@@ -25,4 +25,4 @@ Table of Contents
 - [Array Reverse](./javascript/ArrayReverse/README.md)
 - [Array Insert Shift](./javascript/arrayInsertShift/README.md)
 - [Array Binary Search](./javascript/arrayBinarySearch/README.md)
-
+- [Linked List](./javascript/linkedList/README.md)
