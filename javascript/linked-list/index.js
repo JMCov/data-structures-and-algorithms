@@ -94,6 +94,29 @@ class LinkedList {
     return false;
   }
 
+
+  kthFromEnd(value) {
+    if (value < 0) {
+      return 'Exception';
+    }
+
+    let tempNum = (this.length - 1) - value;
+    let current = this.head;
+
+    if (tempNum === 0) {
+      return current.value;
+    }
+
+    if (tempNum < 0) {
+      return 'Exception';
+    }
+
+    for (let i = 0; i < tempNum; i++) {
+      current = current.next;
+    }
+
+    return current.value;
+  }
 }
 
 class Node {

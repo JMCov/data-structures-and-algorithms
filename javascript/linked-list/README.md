@@ -37,6 +37,9 @@ Collaborated with:
 
 Adrienne Frey
 Joe Davitt
+Ken Holt
 Jeremy Cleland
+Brandon Perard
 
-![Linked List](../assets/Code-Challenge-6.PNG)
+![Linked List Challenge 6](../assets/Code-Challenge-6.PNG)
+![Linked List Challenge 7](../assets/Code-Challenge-7.PNG)

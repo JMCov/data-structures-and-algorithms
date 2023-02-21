@@ -87,4 +87,25 @@ describe('Linked List', () => {
     expect(linkedString).toEqual('{ apple } -> { orange } -> { pineapple } -> { kiwi } -> { mango } -> NULL');
   });
 
+  it('Should return the value of the node kth away from the end of the list', () => {
+    const list = new LinkedList();
+    list.append('apple');
+    list.append('orange');
+    list.append('kiwi');
+    list.append('mango');
+    list.append('pineapple');
+    list.append('carrot');
+
+    expect(list.kthFromEnd(7)).toEqual('Exception');
+    expect(list.kthFromEnd(6)).toEqual('Exception');
+    expect(list.kthFromEnd(5)).toEqual('apple');
+    expect(list.kthFromEnd(4)).toEqual('orange');
+    expect(list.kthFromEnd(3)).toEqual('kiwi');
+    expect(list.kthFromEnd(2)).toEqual('mango');
+    expect(list.kthFromEnd(1)).toEqual('pineapple');
+    expect(list.kthFromEnd(0)).toEqual('carrot');
+
+  });
+
+
 });
