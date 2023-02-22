@@ -40,6 +40,10 @@ Joe Davitt
 Ken Holt
 Jeremy Cleland
 Brandon Perard
+Tyler Bennett
+Ty Aponte
+Martin Hansen
 
 ![Linked List Challenge 6](../assets/Code-Challenge-6.PNG)
 ![Linked List Challenge 7](../assets/Code-Challenge-7.PNG)
+![Linked List Challenge 8](../assets/Code-Challenge-8.PNG)

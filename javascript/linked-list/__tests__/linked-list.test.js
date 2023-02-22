@@ -1,7 +1,7 @@
 'use strict';
 
 // Require our linked list implementation
-const LinkedList = require('../index');
+const { LinkedList, zipLists } = require('../index');
 
 describe('Linked List', () => {
   it('works', () => {
@@ -104,6 +104,31 @@ describe('Linked List', () => {
     expect(list.kthFromEnd(2)).toEqual('mango');
     expect(list.kthFromEnd(1)).toEqual('pineapple');
     expect(list.kthFromEnd(0)).toEqual('carrot');
+
+  });
+
+  it('should zip 2 existing linked lists', () => {
+    const list1 = new LinkedList();
+    const list2 = new LinkedList();
+
+
+    list1.append('apple');
+    list1.append('orange');
+    list1.append('kiwi');
+    list2.append('mango');
+    list2.append('pineapple');
+    list2.append('carrot');
+
+    const list3 =zipLists(list1, list2);
+
+
+    expect(list3.head.value).toEqual('apple');
+    expect(list3.head.next.value).toEqual('mango');
+    expect(list3.head.next.next.value).toEqual('orange');
+    expect(list3.head.next.next.next.value).toEqual('pineapple');
+    expect(list3.head.next.next.next.next.value).toEqual('kiwi');
+    expect(list3.head.next.next.next.next.next.value).toEqual('carrot');
+
 
   });
 
