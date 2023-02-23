@@ -137,6 +137,35 @@ const zipLists = (list1, list2) => {
   return list3;
 };
 
+const reverseList = (list) => {
+  let current = list.head;
+  const list2 = new LinkedList();
+
+  while (current) {
+    list2.insert(current.value);
+    current = current.next;
+  }
+  return list2;
+};
+
+const isPalindrome = (list) => {
+
+  let list1 = list;
+  let list2 = reverseList(list1);
+  let current1 = list1.head;
+  let current2 = list2.head;
+
+  while (current1 && current2) {
+    if (current1.value !== current2.value) {
+      return false;
+    }
+    current1 = current1.next;
+    current2 = current2.next;
+  }
+  return true;
+};
+
+
 
 class Node {
   constructor(value, next = null) {
@@ -145,4 +174,4 @@ class Node {
   }
 }
 
-module.exports = { LinkedList, zipLists };
+module.exports = { LinkedList, zipLists, reverseList, isPalindrome };
