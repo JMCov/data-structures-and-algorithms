@@ -1,7 +1,7 @@
 'use strict';
 
 // Require our linked list implementation
-const { LinkedList, zipLists } = require('../index');
+const { LinkedList, zipLists, reverseList, isPalindrome } = require('../index');
 
 describe('Linked List', () => {
   it('works', () => {
@@ -131,6 +131,54 @@ describe('Linked List', () => {
 
 
   });
+
+  it('should reverse an existing linked lists', () => {
+    const list1 = new LinkedList();
+
+    list1.append('apple');
+    list1.append('orange');
+    list1.append('kiwi');
+    list1.append('mango');
+
+
+    const list2 =reverseList(list1);
+
+
+    expect(list2.head.value).toEqual('mango');
+    expect(list2.head.next.value).toEqual('kiwi');
+    expect(list2.head.next.next.value).toEqual('orange');
+    expect(list2.head.next.next.next.value).toEqual('apple');
+
+
+
+  });
+
+  it('should detect if an existing linked list is a Palindrome', () => {
+    const list1 = new LinkedList();
+    const list2 = new LinkedList();
+    list1.append('apple');
+    list1.append('orange');
+    list1.append('kiwi');
+    list1.append('orange');
+    list1.append('apple');
+    list2.append('apple');
+    list2.append('orange');
+    list2.append('kiwi');
+    list2.append('banana');
+    list2.append('apple');
+
+
+    let returnedList1 = isPalindrome(list1);
+    let returnedList2 = isPalindrome(list2);
+
+
+    expect(returnedList1).toBeTruthy();
+    expect(returnedList2).toBeFalsy();
+
+
+
+  });
+
 
 
 });
