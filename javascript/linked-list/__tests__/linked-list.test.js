@@ -1,7 +1,7 @@
 'use strict';
 
 // Require our linked list implementation
-const { LinkedList, zipLists, reverseList, isPalindrome } = require('../index');
+const { LinkedList, zipLists, reverseList, isPalindrome, Stack, Queue } = require('../index');
 
 describe('Linked List', () => {
   it('works', () => {
@@ -119,7 +119,7 @@ describe('Linked List', () => {
     list2.append('pineapple');
     list2.append('carrot');
 
-    const list3 =zipLists(list1, list2);
+    const list3 = zipLists(list1, list2);
 
 
     expect(list3.head.value).toEqual('apple');
@@ -141,7 +141,7 @@ describe('Linked List', () => {
     list1.append('mango');
 
 
-    const list2 =reverseList(list1);
+    const list2 = reverseList(list1);
 
 
     expect(list2.head.value).toEqual('mango');
@@ -175,8 +175,37 @@ describe('Linked List', () => {
     expect(returnedList1).toBeTruthy();
     expect(returnedList2).toBeFalsy();
 
+  });
 
 
+  it('Can successfully push onto a stack', () => {
+    let stack = new Stack();
+    stack.push(1);
+
+    expect(stack.top.value).toEqual(1);
+
+  });
+
+  it('Can successfully push multiple onto a stack', () => {
+    let stack = new Stack();
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+
+    expect(stack.top.value).toEqual(3);
+    expect(stack.top.next.value).toEqual(2);
+    expect(stack.top.next.next.value).toEqual(1);
+  });
+
+  it('Can successfully pop off of a stack', () => {
+    let stack = new Stack();
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+    let poppedValue = stack.pop();
+
+    expect(poppedValue).toEqual(3);
+    expect(stack.top.value).toEqual(2);
   });
 
 
