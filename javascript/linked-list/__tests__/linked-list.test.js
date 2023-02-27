@@ -1,7 +1,7 @@
 'use strict';
 
 // Require our linked list implementation
-const { LinkedList, zipLists, reverseList, isPalindrome, Stack, Queue } = require('../index');
+const { LinkedList, zipLists, reverseList, isPalindrome, Stack, Queue, PseudoQueue } = require('../index');
 
 describe('Linked List', () => {
   it('works', () => {
