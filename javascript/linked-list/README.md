@@ -3,6 +3,7 @@
 Introduction to linked lists
 
 ## Challenge
+
 Node
 Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
 Linked List
@@ -32,26 +33,28 @@ Returns: a string representing all the values in the Linked List, formatted as:
   - Push
 
     - Arguments: value
-        - adds a new node with that value to the top of the stack with an O(1) Time performance.
+      - adds a new node with that value to the top of the stack with an O(1) Time performance.
   - Pop
     - Arguments: none
-        - Returns: the value from node from the top of the stack
-        - Removes the node from the top of the stack
-        - Should raise exception when called on empty stack
+      - Returns: the value from node from the top of the stack
+      - Removes the node from the top of the stack
+      - Should raise exception when called on empty stack
   - Peek
     - Arguments: none
-        - Returns: Value of the node located at the top of the stack
-        - Should raise exception when called on empty stack
+      - Returns: Value of the node located at the top of the stack
+      - Should raise exception when called on empty stack
   - is empty
     - Arguments: none
-        - Returns: Boolean indicating whether or not the stack is empty.
+      - Returns: Boolean indicating whether or not the stack is empty.
+
 ### Queue
+
 - Create a Queue class that has a front property. It creates an empty Queue when instantiated.
 - This object should be aware of a default empty value assigned to front when the queue is created.
 - The class should contain the following methods:
   - enqueue
     - Arguments: value
-        - adds a new node with that value to the back of the queue with an O(1) Time performance.
+      - adds a new node with that value to the back of the queue with an O(1) Time performance.
   - dequeue
     - Arguments: none
       - Returns: the value from node from the front of the queue
@@ -90,3 +93,4 @@ Martin Hansen
 ![Linked List Challenge 7](../assets/Code-Challenge-7.PNG)
 ![Linked List Challenge 8](../assets/Code-Challenge-8.PNG)
 ![Linked List Challenge 11](../assets/Code-Challenge-11.PNG)
+![Linked List Challenge 12](../assets/Code-Challenge-12.PNG)

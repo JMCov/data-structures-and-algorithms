@@ -1,7 +1,7 @@
 'use strict';
 
 // Require our linked list implementation
-const { LinkedList, zipLists, reverseList, isPalindrome, Stack, Queue, PseudoQueue } = require('../index');
+const { LinkedList, zipLists, reverseList, isPalindrome, Stack, Queue, PseudoQueue, Animal, AnimalShelter } = require('../index');
 
 describe('Linked List', () => {
   it('works', () => {
@@ -208,6 +208,20 @@ describe('Linked List', () => {
     expect(stack.top.value).toEqual(2);
   });
 
+  it('Can successfully add and remove animal to the animal shelter', () => {
+    let animalShelter = new AnimalShelter();
+    animalShelter.enqueue('dog', 'Spot');
+    animalShelter.enqueue('cat', 'Mr. Mittens');
+    animalShelter.enqueue('dog', 'Pedro');
+    animalShelter.enqueue('dog', 'Baxter');
+    animalShelter.enqueue('cat', 'Felix');
+
+    animalShelter.dequeue('cat');
+
+    expect(animalShelter.dogQueue.front.value.name).toEqual('Spot');
+
+    expect(animalShelter.catQueue.front.value.name).toEqual('Felix');
+  });
 
 
 });
