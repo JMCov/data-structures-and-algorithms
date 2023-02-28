@@ -255,6 +255,74 @@ class PseudoQueue {
   }
 }
 
+class AnimalShelter {
+  constructor() {
+    this.dogQueue = new Queue();
+    this.catQueue = new Queue();
+  }
+
+  enqueue(species, name) {
+    const newNode = new Animal(species, name);
+
+    if (species === 'dog') {
+      if (this.dogQueue.front) {
+        this.dogQueue.back.next = newNode;
+      } else {
+        this.dogQueue.front = newNode;
+      }
+      this.dogQueue.back = newNode;
+    }
+
+    if (species === 'cat') {
+      if (this.catQueue.front) {
+        this.catQueue.back.next = newNode;
+      } else {
+        this.catQueue.front = newNode;
+      }
+      this.catQueue.back = newNode;
+    }
+  }
+
+  dequeue(species) {
+    let removedValue = null;
+
+    if (species === 'dog') {
+      if (this.dogQueue.front) {
+        removedValue = this.dogQueue.front.value;
+        if (this.dogQueue.front === this.dogQueue.back) {
+          this.dogQueue.back = null;
+        }
+        this.dogQueue.front = this.dogQueue.front.next;
+      }
+      return removedValue;
+    }
+
+    if (species === 'cat') {
+      if (this.catQueue.front) {
+        removedValue = this.catQueue.front.value;
+        if (this.catQueue.front === this.catQueue.back) {
+          this.catQueue.back = null;
+        }
+        this.catQueue.front = this.catQueue.front.next;
+      }
+      return removedValue;
+    }
+  }
+
+}
+
+
+
+class Animal {
+  constructor(species, name, next = null) {
+    this.value = {
+      species: species,
+      name: name
+    };
+    this.next = next;
+  }
+}
+
 class Node {
   constructor(value, next = null) {
     this.value = value;
@@ -262,4 +330,4 @@ class Node {
   }
 }
 
-module.exports = { LinkedList, zipLists, reverseList, isPalindrome, Stack, Queue, PseudoQueue };
+module.exports = { LinkedList, zipLists, reverseList, isPalindrome, Stack, Queue, PseudoQueue, AnimalShelter, Animal };
