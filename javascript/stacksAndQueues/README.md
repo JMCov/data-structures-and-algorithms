@@ -54,8 +54,6 @@ Create stacks and queues for various Code Challenges
 
 Mob Programming and test our code to see if it works. I don't know what Big O is yet.
 
-
-
 Collaborated with:
 
 Adrienne Frey
@@ -63,9 +61,8 @@ Joe Davitt
 Ken Holt
 Jeremy Cleland
 Brandon Perard
-Tyler Bennett
-Ty Aponte
-Martin Hansen
+Yen Xiong Yuan
 
 ![Linked List Challenge 11](../assets/Code-Challenge-11.PNG)
 ![Linked List Challenge 12](../assets/Code-Challenge-12.PNG)
+![Linked List Challenge 13](../assets/Code-Challenge-13.PNG)
