@@ -54,8 +54,6 @@ Create stacks and queues for various Code Challenges
 
 Mob Programming and test our code to see if it works. I don't know what Big O is yet.
 
-
-
 Collaborated with:
 
 Adrienne Frey
