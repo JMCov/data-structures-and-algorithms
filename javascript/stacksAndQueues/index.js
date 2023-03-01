@@ -3,28 +3,24 @@
 
 class Stack {
   constructor() {
-    this.top = null;
+    this.value = [];
   }
 
   push(value) {
-    let newNode = new Node(value);
-    newNode.next = this.top;
-    this.top = newNode;
+    this.value.push(value);
   }
   pop() {
-    if (!this.top) {
+    if (this.value.length === 0) {
       return null;
     }
-    let current = this.top;
-    this.top = current.next;
-    return current.value;
+    return this.value.pop();
   }
   peek() {
-    return this.top.value;
+    return this.value[this.value.length - 1];
   }
   isEmpty() {
 
-    return this.top === null;
+    return this.value.length === 0;
   }
 }
 
@@ -167,4 +163,44 @@ class Node {
 
 
 
-module.exports = { Stack, Queue, PseudoQueue, AnimalShelter };
+function validateBrackets(str) {
+  let stack = new Stack();
+
+  for (let i = 0; i < str.length; i++) {
+    let temp = str[i];
+    if (temp === '(' || temp === '[' || temp === '{') {
+      stack.push(temp);
+    }
+    if (stack.length === 0) {
+      return false;
+    }
+    if (temp === ')') {
+      let check = stack.pop();
+      if (check !== '(') {
+        return false;
+      }
+    }
+    if (temp === ']') {
+      let check = stack.pop();
+      if (check !== '[') {
+        return false;
+      }
+    }
+    if (temp === '}') {
+      let check = stack.pop();
+      if (check !== '{') {
+        return false;
+      }
+    }
+  }
+  if (stack.pop() !== null) {
+    return false;
+
+  }
+  return true;
+}
+
+
+
+
+module.exports = { Stack, Queue, PseudoQueue, AnimalShelter, validateBrackets };

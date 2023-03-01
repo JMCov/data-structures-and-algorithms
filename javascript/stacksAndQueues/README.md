@@ -63,9 +63,8 @@ Joe Davitt
 Ken Holt
 Jeremy Cleland
 Brandon Perard
-Tyler Bennett
-Ty Aponte
-Martin Hansen
+Yen Xiong Yuan
 
 ![Linked List Challenge 11](../assets/Code-Challenge-11.PNG)
 ![Linked List Challenge 12](../assets/Code-Challenge-12.PNG)
+![Linked List Challenge 13](../assets/Code-Challenge-13.PNG)
