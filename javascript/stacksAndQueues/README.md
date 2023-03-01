@@ -1,4 +1,4 @@
-# Singly Linked List
+# Stacks and Queues
 
 Introduction to linked lists
 
