@@ -27,3 +27,4 @@ Table of Contents
 - [Array Binary Search](./javascript/arrayBinarySearch/README.md)
 - [Linked List](./javascript/linked-list/README.md)
 - [Stacks and Queues](./javascript/stacksAndQueues/README.md)
+- [Trees](./javascript/trees/README.md)
