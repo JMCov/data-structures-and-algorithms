@@ -1,6 +1,5 @@
 'use strict';
 
-
 class Stack {
   constructor() {
     this.value = [];
@@ -22,12 +21,23 @@ class Stack {
 
     return this.value.length === 0;
   }
+  getMax() {
+    let largest = 0;
+
+    for (let i = 0; i < this.value.length; i++) {
+      if (this.value[i] > largest) {
+        largest = this.value[i];
+      }
+    }
+    return largest;
+  }
 }
 
 class Queue {
   constructor() {
     this.front = null;
     this.back = null;
+    this.length = 0;
   }
   enqueue(value) {
     const newNode = new Node(value);
@@ -37,6 +47,7 @@ class Queue {
       this.front = newNode;
     }
     this.back = newNode;
+    this.length++;
   }
   dequeue() {
     let removedValue = null;
@@ -47,6 +58,7 @@ class Queue {
       }
       this.front = this.front.next;
     }
+    this.length--;
     return removedValue;
   }
 
@@ -158,6 +170,7 @@ class Node {
   constructor(value, next = null) {
     this.value = value;
     this.next = next;
+
   }
 }
 
@@ -200,7 +213,25 @@ function validateBrackets(str) {
   return true;
 }
 
+function duckDuckGoose(arr, int) {
+  let q = new Queue();
+  for (let i = 0; i < arr.length; i++) {
+    q.enqueue(arr[i]);
+  }
+  while (q.length > 1) {
+    for (let i = 1; i <= int; i++) {
+      if (i < int) {
+        q.enqueue(q.dequeue());
+      }
+      if (i === int) {
+        q.dequeue();
+      }
+
+    }
+  }
+  return q.peek();
+}
 
 
 
-module.exports = { Stack, Queue, PseudoQueue, AnimalShelter, validateBrackets };
+module.exports = { Stack, Queue, PseudoQueue, AnimalShelter, validateBrackets, duckDuckGoose };
