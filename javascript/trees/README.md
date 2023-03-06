@@ -48,5 +48,10 @@ Mob Programming and test our code to see if it works.
 Collaborated with:
 
 John Chavez
+Adrienne Frey
+Joe Davitt
+Ken Holt
+Yen Xiong Yuan
+Ty Aponte
 
 ![Linked List Challenge 16](../assets/Code-Challenge-16.PNG)
