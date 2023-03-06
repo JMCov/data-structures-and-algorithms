@@ -37,6 +37,10 @@ describe('Trees', () => {
     expect(results).toEqual([1, 8, 5, 17, 15, 10]);
   });
 
+  it('returns the max number', () => {
+    const results = tree.getMax();
+    expect(results).toEqual(17);
+  });
 
 });
 

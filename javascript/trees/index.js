@@ -74,6 +74,28 @@ class Tree {
     return results;
   }
 
+  getMax() {
+    let results = this.root.value;
+
+    const traverse = (node) => {
+      if (node.left) {
+        if (node.left.value > results) {
+          results = node.left.value;
+        }
+        traverse(node.left);
+      }
+
+      if (node.right) {
+        if (node.right.value > results) {
+          results = node.right.value;
+        }
+        traverse(node.right);
+      }
+    };
+    traverse(this.root);
+    return results;
+  }
+
 }
 
 class BST extends Tree {
@@ -117,7 +139,7 @@ class BST extends Tree {
     while (current && !contains) {
       if (value < current.value) {
         current = current.left;
-      }else if (value > current.value) {
+      } else if (value > current.value) {
         current = current.right;
       } else {
         contains = true;
@@ -128,4 +150,4 @@ class BST extends Tree {
   }
 }
 
-module.exports = { Tree, Node, BST};
+module.exports = { Tree, Node, BST };
