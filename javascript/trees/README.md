@@ -1,6 +1,6 @@
 # Trees
 
-Create a Binary Tree and Binary Search Tree that sorts values
+Create a Binary Tree and Binary Search Tree with various methods
 
 ## Challenge
 
@@ -12,6 +12,7 @@ Create a Binary Tree and Binary Search Tree that sorts values
       - pre order
       - in order
       - post order
+      - get Max
     - Each depth first traversal method should return an array of values, ordered appropriately.
 - Binary Search Tree
   - Create a Binary Search Tree class
@@ -35,6 +36,17 @@ Create a Binary Tree and Binary Search Tree that sorts values
   - preOrder() - Pre Order depth first traversal
   - inOrder() - In Order depth first traversal
   - postOrder() - Post Order depth first traversal
+  - getMax() - Get max value within the tree
 - Binary Search Tree subclass
   - add(value) - Adds a value to the tree
   - contains(value) - Searches for a value in the tree
+
+## Approach & Efficiency
+
+Mob Programming and test our code to see if it works.
+
+Collaborated with:
+
+John Chavez
+
+![Linked List Challenge 16](../assets/Code-Challenge-16.PNG)
