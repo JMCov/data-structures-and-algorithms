@@ -55,3 +55,4 @@ Yen Xiong Yuan
 Ty Aponte
 
 ![Linked List Challenge 16](../assets/Code-Challenge-16.PNG)
+![Linked List Challenge 17](../assets/Code-Challenge-17.PNG)

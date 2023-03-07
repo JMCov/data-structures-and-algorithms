@@ -1,7 +1,7 @@
 'use strict';
 
 
-const { Node, Tree, BST } = require('./index');
+const { Node, Tree, BST, breadthFirst } = require('./index');
 
 describe('Trees', () => {
   let tree = new Tree();
@@ -67,6 +67,25 @@ describe('Binary Search Trees', () => {
     expect(bstree.contains(2)).toBeFalsy();
     expect(bstree.contains(1)).toBeTruthy();
     expect(bstree.contains(17)).toBeTruthy();
+
+  });
+
+});
+
+describe('BreadthFirst', () => {
+
+  let tree = new Tree();
+  tree.root = new Node(5);
+  tree.root.left = new Node(45);
+  tree.root.right = new Node(4);
+  tree.root.left.left = new Node(23);
+  tree.root.left.right = new Node(55);
+  tree.root.right.right = new Node(7);
+  tree.root.right.left = new Node(56);
+
+  it('Returns a Breadth First ordered list', () => {
+
+    expect(breadthFirst(tree)).toEqual([5, 45, 4, 23, 55, 56, 7]);
 
   });
 

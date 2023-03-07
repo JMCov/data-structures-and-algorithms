@@ -150,4 +150,26 @@ class BST extends Tree {
   }
 }
 
-module.exports = { Tree, Node, BST };
+function breadthFirst(tree) {
+
+  const result = [];
+  const queue = [tree.root];
+
+  while (queue.length > 0) {
+    const current = queue.shift();
+
+    result.push(current.value);
+    if (current.left !== null) {
+      queue.push(current.left);
+    }
+    if (current.right !== null) {
+      queue.push(current.right);
+    }
+
+  }
+
+  return result;
+
+}
+
+module.exports = { Tree, Node, BST, breadthFirst };
