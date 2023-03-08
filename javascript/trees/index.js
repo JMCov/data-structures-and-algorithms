@@ -8,18 +8,19 @@ class Node {
   }
 }
 
-// class KaryNode{
-//   constructor(value, k) {
-//     this.value = value;
-//     this.children = new Array(k).fill(null);
-//   }
-// }
+class KaryNode {
+  constructor(value, k) {
+    this.value = value;
+    this.children = new Array(k).fill(null);
+  }
+}
 
-// class KaryTree{
-//   constructor(){
-//     this.root = null;
-//   }
-// }
+class KaryTree {
+  constructor() {
+    this.root = null;
+  }
+
+}
 
 
 class Tree {
@@ -172,4 +173,40 @@ function breadthFirst(tree) {
 
 }
 
-module.exports = { Tree, Node, BST, breadthFirst };
+
+function fizzBuzzTree(bTree) {
+  let newTree = bTree;
+  let current = newTree.root;
+
+
+  const traverse = (current) => {
+    if (current === null) return;
+
+    if (current.value % 3 === 0 && current.value % 5 === 0) {
+      current.value = 'FizzBuzz';
+
+
+    } else if (current.value % 3 === 0) {
+      current.value = 'Fizz';
+
+    } else if (current.value % 5 === 0) {
+      current.value = 'Buzz';
+
+    } else {
+      current.value = current.value.toString();
+
+    }
+
+    if (current.left) {
+      traverse(current.left);
+    }
+    if (current.right) {
+      traverse(current.right);
+    }
+  };
+
+  traverse(current);
+  return newTree;
+}
+
+module.exports = { Tree, Node, BST, breadthFirst, fizzBuzzTree };
