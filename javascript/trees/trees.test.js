@@ -1,7 +1,7 @@
 'use strict';
 
 
-const { Node, Tree, BST, breadthFirst } = require('./index');
+const { Node, Tree, BST, breadthFirst, fizzBuzzTree } = require('./index');
 
 describe('Trees', () => {
   let tree = new Tree();
@@ -86,6 +86,26 @@ describe('BreadthFirst', () => {
   it('Returns a Breadth First ordered list', () => {
 
     expect(breadthFirst(tree)).toEqual([5, 45, 4, 23, 55, 56, 7]);
+
+  });
+
+
+});
+
+describe('FizzBuzz tests', () => {
+
+  it('fizzbuzz works', () => {
+    let tree = new Tree();
+    tree.root = new Node(5);
+    tree.root.left = new Node(1);
+    tree.root.right = new Node(8);
+    tree.root.left.left = new Node(10);
+
+    let test = fizzBuzzTree(tree);
+    expect(test.root.value).toEqual('Buzz');
+    expect(test.root.left.value).toEqual('1');
+    expect(test.root.right.value).toEqual('8');
+    expect(test.root.left.left.value).toEqual('Buzz');
 
   });
 
