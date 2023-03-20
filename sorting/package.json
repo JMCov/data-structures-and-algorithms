@@ -1,0 +1,17 @@
+{
+  "name": "data-structures-and-algorithms",
+  "version": "1.0.0",
+  "description": "Data Structures, Algorithms, Code Challenges",
+  "main": "index.js",
+  "scripts": {
+    "get-challenge": "`which bash` ./code-challenges/bin/get-challenge.sh",
+    "test": "jest --verbose --coverage",
+    "lint": "eslint '**/*.js'"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^29.5.0",
+    "supertest": "^6.3.3"
+  }
+}
