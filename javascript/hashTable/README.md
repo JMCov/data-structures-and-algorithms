@@ -19,11 +19,18 @@ Implement a Hashtable Class with the following methods:
   - Arguments: key
   - Returns: Index in the collection for that key
 
+- Write a function called repeated word that finds the first word to occur more than once in a string
+
 ## Approach & Efficiency
 
 We looked through the demo and used ChatGPT to help understand certain aspects of hash tables.
 
 BigO for time is O(1)
+BigO for space is O(n)
+
+Hash map Function
+
+BigO for time is O(n)
 BigO for space is O(n)
 
 ## Solution
@@ -32,7 +39,12 @@ node index.js
 
 For tests: npm run test
 
+## White Board
+
+[Hash Map](../assets/code-challenge-31.PNG)
+
 ## Collaborators
 
 - Adrienne Frey
 - Joe Davitt
+- John Chavez
