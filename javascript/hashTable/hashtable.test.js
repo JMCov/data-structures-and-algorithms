@@ -1,5 +1,5 @@
 'use strict';
-const { HashTable, repeatedWord } = require('./index');
+const { HashTable, repeatedWord, leftJoin } = require('./index');
 
 const tableSize = 1024;
 const table = new HashTable(tableSize);
@@ -60,6 +60,50 @@ describe('HashTable', () => {
     expect(repeatedWord('It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn\'t know what I was doing in New York...')).toEqual('summer');
 
     expect(repeatedWord('This is a test for null')).toEqual(null);
+  });
+
+  it('Should return a new data structure with the synonym and antonym matched to their key', () => {
+
+    const table1 = new HashTable(tableSize);
+    const table2 = new HashTable(tableSize);
+
+    table1.set('diligent', 'employed');
+    table1.set('fond', 'enamored');
+    table1.set('guide', 'usher');
+    table1.set('outfit', 'garb');
+    table1.set('wrath', 'anger');
+    table2.set('diligent', 'idle');
+    table2.set('fond', 'averse');
+    table2.set('guide', 'follow');
+    table2.set('flow', 'jam');
+    table2.set('wrath', 'delight');
+
+    expect(leftJoin(table1, table2)).toEqual([[
+      'diligent',
+      'employed',
+      'idle',
+    ],
+    [
+      'outfit',
+      'garb',
+      null,
+    ],
+    [
+      'fond',
+      'enamored',
+      'averse',
+    ],
+    [
+      'guide',
+      'usher',
+      'follow',
+    ],
+    [
+      'wrath',
+      'anger',
+      'delight',
+    ],]);
+
   });
 
 });
