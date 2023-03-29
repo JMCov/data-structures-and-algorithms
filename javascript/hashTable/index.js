@@ -78,4 +78,17 @@ function repeatedWord(str) {
   return null;
 }
 
-module.exports = { HashTable, repeatedWord };
+function leftJoin(hashTable1, hashTable2) {
+  let result = [];
+
+  for (let key of hashTable1.keys()) {
+    let value1 = hashTable1.get(key);
+    let value2 = hashTable2.get(key) || null;
+    result.push([key, value1, value2]);
+  }
+
+  return result;
+}
+
+
+module.exports = { HashTable, repeatedWord, leftJoin };
