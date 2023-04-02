@@ -1,12 +1,12 @@
 'use strict';
 
 class HashTable {
-  constructor(size){
+  constructor(size) {
     this.size = size;
     this.buckets = new Array(size);
   }
 
-  hash(key){
+  hash(key) {
     let characters = key.split('');
     let asciiSum = characters.reduce((sum, character) => {
       return sum + character.charCodeAt(0);
@@ -15,7 +15,7 @@ class HashTable {
     return initialHash % this.size;
   }
 
-  set(key, value){
+  set(key, value) {
     let position = this.hash(key);
     if (!this.buckets[position]) {
       this.buckets[position] = {};
@@ -23,9 +23,9 @@ class HashTable {
     this.buckets[position][key] = value;
   }
 
-  get(key){
+  get(key) {
     let position = this.hash(key);
-    if(this.buckets[position]){
+    if (this.buckets[position]) {
       let value = this.buckets[position][key];
       return value;
     } else {
@@ -33,7 +33,7 @@ class HashTable {
     }
   }
 
-  has(key){
+  has(key) {
     let position = this.hash(key);
 
     let result = this.buckets[position] ? true : false
@@ -91,4 +91,43 @@ function leftJoin(hashTable1, hashTable2) {
 }
 
 
-module.exports = { HashTable, repeatedWord, leftJoin };
+function mostRepeatedWord(str) {
+  const space = ' ';
+  const table = new HashTable(1024);
+  let currentWord = '';
+  let tempValue = 0;
+  let word = null;
+
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charAt(i).toLowerCase();
+    if (space.includes(char)) {
+      if (currentWord.length > 0) {
+        if (table.has(currentWord)) {
+          let value = table.get(currentWord);
+          value++;
+          table.set(currentWord, value);
+          if (value > tempValue) {
+            tempValue = value;
+            word = currentWord;
+          }
+        }
+        table.set(currentWord, 1);
+        currentWord = '';
+      }
+    } else {
+      currentWord += char;
+    }
+  }
+  if (currentWord.length > 0 && table.has(currentWord)) {
+    let value = table.get(currentWord);
+    value++;
+    table.set(currentWord, value);
+    if (value > tempValue) {
+      tempValue = value;
+      word = currentWord;
+    }
+  }
+  return word;
+}
+
+module.exports = { HashTable, repeatedWord, leftJoin, mostRepeatedWord };
