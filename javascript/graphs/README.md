@@ -25,10 +25,19 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
   - Arguments: none
   - Returns the total number of nodes in the graph
   - 0 if there are none
+  Write the following method for the Graph class:
+- breadth first traversal
+  - Arguments: Node
+  - Return: A collection of nodes in the order they were visited.
+  - Display the collection
 
 ## Approach & Efficiency
 
 The Big O for this depends which method is being performed
+
+## White Board
+
+![Linked List Challenge 36](../assets/code-challenge-36.PNG)
 
 ## Solution
 
