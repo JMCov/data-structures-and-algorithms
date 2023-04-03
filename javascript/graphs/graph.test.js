@@ -67,4 +67,29 @@ describe('Graph', () => {
     });
   });
 
+  describe('breadth first', () => {
+    it('should perform breadth first traversal', () => {
+      const graph = new Graph();
+
+      const vertexA = graph.addVertex('A');
+      const vertexB = graph.addVertex('B');
+      const vertexC = graph.addVertex('C');
+      const vertexD = graph.addVertex('D');
+      const vertexE = graph.addVertex('E');
+
+      graph.addDirectedEdge(vertexA, vertexB);
+      graph.addDirectedEdge(vertexA, vertexD);
+      graph.addDirectedEdge(vertexB, vertexC);
+      graph.addDirectedEdge(vertexD, vertexE);
+
+      const nodes = [];
+      const callback = (value) => nodes.push(value);
+
+      const root = vertexA;
+      const result = graph.breadthFirst(root, callback);
+
+      expect(result).toEqual(new Set([vertexA, vertexB, vertexD, vertexC, vertexE]));
+      expect(nodes).toEqual(['A', 'B', 'D', 'C', 'E']);
+    });
+  });
 });
