@@ -30,6 +30,9 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
   - Arguments: Node
   - Return: A collection of nodes in the order they were visited.
   - Display the collection
+- Business Trip Function
+  - Arguments: graph, array of city names
+  - Return: the cost of the trip (if it’s possible) or null (if not)
 
 ## Approach & Efficiency
 
@@ -38,6 +41,7 @@ The Big O for this depends which method is being performed
 ## White Board
 
 ![Linked List Challenge 36](../assets/code-challenge-36.PNG)
+![Linked List Challenge 37](../assets/code-challenge-37.PNG)
 
 ## Solution
 

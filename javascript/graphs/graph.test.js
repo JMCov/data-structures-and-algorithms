@@ -1,4 +1,5 @@
-const Graph = require('.');
+const { Graph, businessTrip } = require('.');
+
 
 describe('Graph', () => {
   let graph;
@@ -90,6 +91,37 @@ describe('Graph', () => {
 
       expect(result).toEqual(new Set([vertexA, vertexB, vertexD, vertexC, vertexE]));
       expect(nodes).toEqual(['A', 'B', 'D', 'C', 'E']);
+    });
+  });
+
+  describe('businessTrip', () => {
+    const graph = new Graph();
+    const cityA = graph.addVertex('City A');
+    const cityB = graph.addVertex('City B');
+    const cityC = graph.addVertex('City C');
+
+
+    graph.addDirectedEdge(cityA, cityB, 150);
+    graph.addDirectedEdge(cityB, cityC, 250);
+
+
+    it('should return the total cost of the trip between cities', () => {
+
+      const tripCost = businessTrip(graph, ['City A', 'City B', 'City C']);
+      expect(tripCost).toEqual(400);
+    });
+
+    it('should return null if any city in the trip is not in the graph', () => {
+
+      const tripCost = businessTrip(graph, ['City A', 'City B', 'City D']);
+      expect(tripCost).toBeNull();
+    });
+
+    it('should return null if there is no direct flight between cities in the trip', () => {
+
+
+      const tripCost = businessTrip(graph, ['City A', 'City C']);
+      expect(tripCost).toBeNull();
     });
   });
 });

@@ -95,4 +95,39 @@ class Graph {
   }
 }
 
-module.exports = Graph;
+function businessTrip(graph, cities) {
+  let cost = 0;
+
+  for (let i = 0; i < cities.length - 1; i++) {
+    let cityA = cities[i];
+    let cityB = cities[i+1];
+    let isCity = null;
+
+    for (let vertex of graph.adjacencyList.keys()) {
+      if (vertex.value === cityA) {
+        isCity = vertex;
+        break;
+      }
+    }
+    if (!isCity) {
+      return null;
+    }
+
+    let connection = false;
+    let neighbors = graph.getNeighbors(isCity);
+    for (let edge of neighbors) {
+      if (edge.vertex.value === cityB) {
+        cost += edge.weight;
+        connection = true;
+        break;
+      }
+    }
+    if (!connection) {
+      return null;
+    }
+  }
+
+  return cost;
+}
+
+module.exports = { Graph, businessTrip };
