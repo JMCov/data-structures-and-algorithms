@@ -33,6 +33,10 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
 - Business Trip Function
   - Arguments: graph, array of city names
   - Return: the cost of the trip (if it’s possible) or null (if not)
+- Depth first traversal
+  - Arguments: Node (Starting point of search)
+  - Return: A collection of nodes in their pre-order depth-first traversal order
+  - Program output: Display the collection
 
 ## Approach & Efficiency
 
@@ -42,6 +46,8 @@ The Big O for this depends which method is being performed
 
 ![Linked List Challenge 36](../assets/code-challenge-36.PNG)
 ![Linked List Challenge 37](../assets/code-challenge-37.PNG)
+![Linked List Challenge 38](../assets/code-challenge-38.PNG)
+
 
 ## Solution
 
