@@ -4,25 +4,34 @@ Introduction to linked lists
 
 ## Challenge
 
-Node
-Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
-Linked List
-Create a Linked List class
-Within your Linked List class, include a head property.
-Upon instantiation, an empty Linked List should be created.
-The class should contain the following methods
-insert
-Arguments: value
-Returns: nothing
-Adds a new node with that value to the head of the list with an O(1) Time performance.
-includes
-Arguments: value
-Returns: Boolean
-Indicates whether that value exists as a Node’s value somewhere within the list.
-to string
-Arguments: none
-Returns: a string representing all the values in the Linked List, formatted as:
+- Node
+  - Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
+- Linked List
+  - Create a Linked List class
+  - Within your Linked List class, include a head property.
+  - Upon instantiation, an empty Linked List should be created.
+  - The class should contain the following methods
+    - insert
+      - Arguments: value
+      - Returns: nothing
+      - Adds a new node with that value to the head of the list with an O(1) Time performance.
+    - includes
+      - Arguments: value
+      - Returns: Boolean
+      - Indicates whether that value exists as a Node’s value somewhere within the list.
+    - to string
+      - Arguments: none
+    - Returns: a string representing all the values in
+
+    - the Linked List, formatted as:
 "{ a } -> { b } -> { c } -> NULL"
+
+- Challenge 42
+  - Write a function that takes in a URL and replaces any spaces with %20
+
+- Challenge 43
+  - Write a function called reverseLinkedList that takes a linked list as its argument and returns a new linked list with the same nodes, but in reverse order
+
 
 ### Stack
 
@@ -94,4 +103,5 @@ Martin Hansen
 ![Linked List Challenge 8](../assets/Code-Challenge-8.PNG)
 ![Linked List Challenge 11](../assets/Code-Challenge-11.PNG)
 ![Linked List Challenge 12](../assets/Code-Challenge-12.PNG)
-![Linked List Challenge 43](../assets/Code-Challenge-43.PNG)
+![Linked List Challenge 42](../assets/code-challenge-42.PNG)
+![Linked List Challenge 43](../assets/code-challenge-43.PNG)
