@@ -94,3 +94,4 @@ Martin Hansen
 ![Linked List Challenge 8](../assets/Code-Challenge-8.PNG)
 ![Linked List Challenge 11](../assets/Code-Challenge-11.PNG)
 ![Linked List Challenge 12](../assets/Code-Challenge-12.PNG)
+![Linked List Challenge 43](../assets/Code-Challenge-43.PNG)
